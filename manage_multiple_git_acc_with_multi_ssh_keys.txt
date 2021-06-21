@@ -1,0 +1,32 @@
+1. Create separate ssh key pair for multiple github account
+	Ex - One for office and another for personal account.
+- To create ssh keys, checkout how to create ssh keys on google.
+
+2. Add respective public keys in respective repositories.
+
+3. Link repo to keys in ~/.ssh/config file as below.
+
+Ex- For company repo 
+	- Original origin url - git remote add origin git@github.com:company_user_name/company_reponame.git
+	- modify origin url to - git remote add origin git@mycompanyacc:company_user_name/company_reponame.git
+
+Ex- For personal repo 
+	- Original origin url - git remote add origin git@github.com:personal_user_name/personal_reponame.git
+	- modify origin url to - git remote add origin git@mypersonalacc:personal_user_name/personal_reponame.git
+
+Config file - ~/.ssh/config will look like below
+
+Host mycompanyacc
+	Hostname github.com
+	User git
+        IdentityFile ~/.ssh/company_account_private_file_name
+        IdentitiesOnly yes
+
+Host mycompanyacc
+	Hostname github.com
+	User git
+        IdentityFile ~/.ssh/personal_account_private_file_name
+        IdentitiesOnly yes	
+
+
+

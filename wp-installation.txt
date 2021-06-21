@@ -1,0 +1,19 @@
+- after installation,wp got save in /var/lib/wordpress
+
+- wp-content folder was auto created
+
+- copy wp-config file from net for template.
+
+to get hash keys, use salt function
+webonise@weboniselab:/var/lib/wordpress$ curl -s https://api.wordpress.org/secret-key/1.1/salt/
+define('AUTH_KEY',         '+ G!Jmh_[v>`Pz@*wLd%shB)E-54vY~HBbY$Q|h6D}r-3ZR1,*g RQye s_N+u(R');
+define('SECURE_AUTH_KEY',  '@k$Y;P0-GNaqLxdFgRjx2H(rX})~MhZq[pl2*nd2UXZAgO*-2,2r[~$rzVVnE81P');
+define('LOGGED_IN_KEY',    'AS:A=ZYXzp-tFFG|XN-G4%-2uzG]J_0.F@xbuZV <Vnu!5$JiHHZ+QltvY:to#O)');
+define('NONCE_KEY',        '{a*N+|>TDhW1=rJ^XjlS0pKv+`D3ML>H5U(u!/EBr|i+|I]oH/=-)oW2U6A;u~5P');
+define('AUTH_SALT',        '@rY Ju2{EK2;^*J`t W=I:Zhj+TpX+M`!0 b8)Oaq(urWa<lIFzb= P#>-Gt2R^p');
+define('SECURE_AUTH_SALT', '@NUk^j4Oj?UNG(We1EDg&N?.}oT-j T7&^ieD!3i+6MkNd+Cm99u=}7uO+U0LQkD');
+define('LOGGED_IN_SALT',   '{OA6*Q]j| =n3>bjrfZ-Q/v9(-LW&g{E,he ,>x+aC{,M^]ikMooj,LqT<)4f-Jv');
+define('NONCE_SALT',       'k.-QIg!(z2)x%<(/:r^Ah|lhk/Jm33a@[={y]_|B-HnZ7PL45tUO*v7$Yqe:^n!Z');
+
+
+

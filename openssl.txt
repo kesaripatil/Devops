@@ -1,0 +1,80 @@
+Identifying which version of OpenSSL you are using is an important first step when preparing to generate a private key or CSR. Your version of OpenSSL dictates which cryptographic algorithms can be used when generating keys as well as which protocols are supported. For example, OpenSSL version 1.0.1 was the first version to support TLS 1.1 and TLS 1.2. Knowing which version of OpenSSL you are using is also important when getting help troubleshooting problems you may run into.s
+
+cmd - openssl version -a
+
+1. Create a private key using the openssl command:
+openssl genrsa -out example.key 2048
+
+2. Create a certificate signing request (CSR) using the private key generated in step 1:
+openssl req -new -key example.key -out example.csr \
+-subj "/C=US/ST=TX/L=Dallas/O=Red Hat/OU=IT/CN=test.example.com"
+
+3. Create a certificate using your CSR and private key:
+openssl x509 -req -days 366 -in example.csr \
+-signkey example.key -out example.crt
+
+CRUC-4374 - 4378, 4401 - bulk pdf download 
+CRUC-4456 - jr duplication
+CRUC-4382 - visually specify which level of data - pranav
+
+CRUC-4390 - RESET PWD - DONE
+CRUC-4340 - SSO LOGIN - 
+
+
+
+tdt - 
+ - 4390 - reset pwd, 4378 - bulk pdf download, 4340 - google sso login
+
+crpt - 
+
+ - 4401 - bulk pdf jr, 
+
+queues to be added
+    "exportBulkPdfJRReport",
+    "exportBulkCfaPdfReport",
+    "deleteBulkPdfDownloads"
+
+The following additional packages will be installed:
+  php-common php7.0 php7.0-cli php7.0-common php7.0-fpm php7.0-json php7.0-opcache php7.0-readline
+Suggested packages:
+
+
+git cherry-pick 0cbaca56f45f158fb86add103a7805c8302179d3^..2b2af137c9aa4169d8951b0302d79f8ab3eef5ed
+
+2021-07-16 11:19:45 Error: SELECT `RpaBehavioursCandidatesScore`.*, ('-') AS  `RpaBehavioursCandidatesScore__english_statements`, ('-') AS  `RpaBehavioursCandidatesScore__behaviour_name`, (SELECT `ReportStatement`.`data`
+                        FROM report_statements AS ReportStatement
+                        WHERE `ReportStatement`.`entity_id` = `RpaBehaviour`.`id`
+                        AND `ReportStatement`.`entity_type` = 4
+                        AND `ReportStatement`.`type` = 1
+                        AND `ReportStatement`.`language_id` = 1) AS  `RpaBehavioursCandidatesScore__language_statements` FROM `crucible_dev`.`rpa_behaviours_candidates_scores` AS `RpaBehavioursCandidatesScore` LEFT JOIN `crucible_dev`.`rpa_behaviours` AS `RpaBehaviour` ON (`RpaBehavioursCandidatesScore`.`rpa_behaviour_id` = `RpaBehaviour`.`id` AND `RpaBehaviour`.`language_id` = 1 AND `RpaBehaviour`.`parent_id` = 0)  WHERE `RpaBehavioursCandidatesScore`.`rpa_candidate_id` = 4962
+
+----
+1. generate private key and certificate
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+
+sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+
+domain name - www.testsslonlocal.com
+
+2. config nginx to use ssl certs and key
+
+# file name /etc/nginx/snippets/self-signed.conf
+ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
+
+domain name - *.amazonaws.com
+
+openssl req -x509 -nodes -newkey rsa:4096 -keyout saml_key.pem -out saml_cert.pem -days 365
+
+openssl req -x509 -nodes -newkey rsa:4096 -keyout puppetserver.example.com_key.pem -out puppetserver.example.com_cert.pem -pubout -out puppetserver.example.com_pub.pem -days 365
+
+openssl req -x509 -nodes -newkey rsa:4096 -keyout puppetserver.example.com_key.pem -out puppetserver.example.com_cert.pem -days 365
+
+
+- to get details in key files
+
+openssl rsa -noout -text -pubin -in puppetserver.example.com_pub.pem
+openssl rsa -noout -text -in puppetserver.example.com_key.pem
+
+
+

@@ -1,0 +1,27 @@
+1. Outermost area that contained starts and ends with {, } is called "main context".
+2. Directives defined within this context will be applied to all in general
+3. "events" context
+	events {
+		worker_connections 1024;
+	}
+	- This context define how workers should be processed.
+	- Number of connections each workers can handle.
+4. "http" content
+	- Helpful for configuration of nginx as a web server or reverse proxy
+	- default location for error & access logs
+	- app root, index file specification
+	- tcp keep alive settings
+	- compression directive
+	- async I/O file operation
+	- config for error status & display
+
+5. "server" context
+	- Child context of http.
+	- There can be multiple server block, each defining specific virtual server to handle client requests.
+	- "listen" & "server_name" directives are used to decide to which server block the request should be sent to process.
+	- listen - ip:port combination to which server will respond
+	- server name - host header part will be matched with this if multiple server block are listening on same listen directive
+
+6. "location" context
+	- This is sub context of server, it can have nested location contexts
+	- 

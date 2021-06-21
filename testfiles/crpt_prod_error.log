@@ -1,0 +1,5 @@
+2021/06/25 05:39:14 [error] 10596#10596: *1199942 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Exception: Serialization of 'SimpleXMLElement' is not allowed in [no active file]:0
+Stack trace:
+#0 [internal function]: session_write_close()
+#1 {main}
+  thrown in [no active file] on line 0" while reading response header from upstream, client: 3.250.6.52, server: crpt.crucibleapp.com, request: "GET /users/candidates/ApiTakeAssessment/cfaU4PIOm/csxFpX66MEWic/jrxvvKa8zB/resume HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "crpt.crucibleapp.com"

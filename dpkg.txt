@@ -1,0 +1,2 @@
+dpkg --list -> lists the installed packges
+sudo dpkg --remove [package file] -> to remove the package
