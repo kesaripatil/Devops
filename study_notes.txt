@@ -47,4 +47,22 @@ To access git via ssh using different private key
 	url = git@mypersonal:kesaripatil/Devops.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 
+** How to check if port is in use on linux / unix
+
+sudo lsof -i -P -n | grep LISTEN
+sudo netstat -tulpn | grep LISTEN
+sudo ss -tulpn | grep LISTEN
+sudo lsof -i:22 ## see a specific port such as 22 ##
+sudo nmap -sTU -O IP-address-Here
+
+** Curl cmd by default look at /etc/ssl/certs/ca-certificates.pem file for server certificate verification.
+We can add server certificate to this file to get the specified site verified.
+
+** pem extension -> privacy enhanced mail
+
+** openssl pkey -in fd.key -pubout -out fd-public.key
+   openssl req -new -key fd.key -out fd.csr
+
+
+
 

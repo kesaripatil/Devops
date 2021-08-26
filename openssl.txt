@@ -66,15 +66,23 @@ domain name - *.amazonaws.com
 
 openssl req -x509 -nodes -newkey rsa:4096 -keyout saml_key.pem -out saml_cert.pem -days 365
 
-openssl req -x509 -nodes -newkey rsa:4096 -keyout puppetserver.example.com_key.pem -out puppetserver.example.com_cert.pem -pubout -out puppetserver.example.com_pub.pem -days 365
+openssl req -x509 -nodes -newkey rsa:4096 -keyout puppetserver_key.pem -out puppet_cert.pem -days 365
 
-openssl req -x509 -nodes -newkey rsa:4096 -keyout puppetserver.example.com_key.pem -out puppetserver.example.com_cert.pem -days 365
+To generate public key from key and cert
 
+openssl rsa -in puppetserver_key.pem -outform PEM -pubout -out puppetserver_pub.pem
 
-- to get details in key files
+puppet_cert.pem  puppetserver_key.pem  puppetserver_pub.pem
+ubuntu@my-ec2:~/ssl_certs$ sudo cp puppetserver_key.pem /etc/puppetlabs/puppet/
+devices/     hiera.yaml   puppet.conf  ssl/         
+ubuntu@my-ec2:~/ssl_certs$ sudo cp puppetserver_key.pem /etc/puppetlabs/puppet/ssl/private_keys/puppetserver.pem
+ubuntu@my-ec2:~/ssl_certs$ sudo cp puppetserver_pub.pem /etc/puppetlabs/puppet/ssl/public_keys/puppetserver.pem
+ubuntu@my-ec2:~/ssl_certs$ sudo cp puppet_cert.pem /etc/puppetlabs/puppet/ssl/certs/puppetserver.pem
 
-openssl rsa -noout -text -pubin -in puppetserver.example.com_pub.pem
-openssl rsa -noout -text -in puppetserver.example.com_key.pem
+ubuntu@my-ec2:/etc/puppetlabs/puppet$ sudo chown puppet.puppet /etc/puppetlabs/puppet/ssl/private_keys/puppetserver.pem
+ubuntu@my-ec2:/etc/puppetlabs/puppet$ sudo chown puppet.puppet /etc/puppetlabs/puppet/ssl/public_keys/puppetserver.pem
+ubuntu@my-ec2:/etc/puppetlabs/puppet$ sudo chown puppet.puppet /etc/puppetlabs/puppet/ssl/certs/puppetserver.pem
+ubuntu@my-ec2:/etc/puppetlabs/puppet$ 
 
 
 

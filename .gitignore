@@ -1,3 +1,4 @@
 *.pdf
 daily_schedule.txt
 todolist
+ssl_certs/
