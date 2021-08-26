@@ -1,0 +1,42 @@
+Arithmetic operator -
+
+echo "5+5"| bc
+
+1. "export" - cmd
+	Export variable to get it in another variable.
+	but reverse is not possible, we can't get changed value of variable outside of it's scope.
+
+	Ex ->
+		file name => hi.sh
+	
+		file code =>
+			#!/bin/sh
+
+			echo $NAME;
+			NAME="Test export cmd";
+			echo $NAME;
+
+		Output Without export =>
+			<blank line>
+			Test export cmd
+
+		Output With export =>
+			$ NAME="Value exported from export"
+			$ export NAME
+			$ ./hi.sh
+			  Value exported from export
+			  Test export cmd
+
+2. "source" script
+	In order to receive environment changes back from the script, we must source the script - this effectively runs the script within our own interactive shell, instead of spawning another shell to run it.
+We can source a script via the "." (dot) command.
+
+	Ex -> 
+		NAME="test name"
+		echo $NAME
+		. ./hi.sh
+		test name
+		Test export cmd
+		echo $NAME
+		Test export cmd
+
