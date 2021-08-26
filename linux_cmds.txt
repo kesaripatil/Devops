@@ -1,0 +1,17 @@
+1. sudo useradd <username> - Adding a new user
+2. sudo passwd <username> - Set password for a new user
+3. sudo userdel <username> - Deleting the user
+4. sudo groupadd <groupname> - Add a new group
+5. sudo groupdel <groupname> - Delete a group
+6. sudo usermod -g <groupname> <username> - Adding a user to a primary group
+7. cat /etc/passwd - Lists all the users in the system
+8. cat /etc/group - Lists all the groups in the system
+9. id <username> - prints info about user, it's group
+10. groups - lists all the groups present in system
+11. groups <username> - prints the group/s name to which a specified user belongs to
+12. cat -n - Adds number to each line in the file
+13. sudo usermod -a -G <groupname> <username> -> To add user to group
+14. journalctl -> To view systemd, kernal and journal logs.
+	14.1. journalctl -> display all logs
+	14.2. journalctl -r -> display logs in reverse order
+	14.3. journalctl -n 5 -> To display few lines

@@ -1,0 +1,50 @@
+*** Ports - start
+- 16 bit positive
+- 0 to 65535
+- types - registered, well-known/system, dynamin/private ports
+- well known : 0-1023
+- registered ports : 1024 - 49151
+- dynamic ports : 49152 - 65535
+*** Ports - end
+
+Ipv4 
+32 bit long
+dotted decimal
+classes - A, B, C, D, E
+class A
+	- 0
+	- 00000000.00000000.00000000.00000000 to 01111111.11111111.11111111.11111111
+	- 0.0.0.0 to 127.255.255.255.255
+	- First 8 bits network, 24 bits host part
+
+class B
+	- 10
+	- 10000000.00000000.00000000.00000000 to 10111111.11111111.11111111.11111111
+	- 128.0.0.0 to 191.255.255.255.255
+	- First 16 bits network, 16 bits host part
+
+class C
+	- 110
+	- 11000000.00000000.00000000.00000000 to 11011111.11111111.11111111.11111111
+	- 192.0.0.0 to 223.255.255.255
+	- First 24 bits network, 8 bits host part
+
+class D
+	- 1110
+	- 11100000.00000000.00000000.00000000 to 11101111.11111111.11111111.11111111
+	- 224.0.0.0 to 239.255.255.255
+
+class E
+	- 1111
+	- 11110000.00000000.00000000.00000000 to 11111111.11111111.11111111.11111111
+
+ARP - Find the mac address of destination m/c whose ip address is known.
+RARP - Find the ip address whose mac address is known.
+
+
+To access git via ssh using different private key
+[remote "origin"]
+	url = git@mypersonal:kesaripatil/Devops.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+
+

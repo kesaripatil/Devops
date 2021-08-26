@@ -1,0 +1,37 @@
+** Health Checks
+ - It offers 2 types of health checks to check if upstream server(actual servers serving requests) are up and running
+	1. passive - available in open source version - nginx : It tracks the status when client makes request to server
+	2. active - available in paid version - nginx plug : It allows LB to make regular requests to upstream to check if it is responding with proper status or not.
+
+** Load balance between 2 http servers
+
+	upstream backendServers {
+		server 10.0.0.8:80 weight = 1;
+		server www.testweb.com:80 weight = 2;
+		server spare.testweb.com:80 backup;
+	}
+	server {
+		location / {
+			proxy_pass http://backendServers;
+		}	
+	}
+
+	- weight param instruct nginx to pass twice connection to server2 than server1
+	- 
+
+** Sending signal to master process
+
+nginx -s <signal>
+
+signals - [stop|reload|quit|reopen]
+
+** nginx pid file location
+
+ - /var/run/nginx.pid
+ - /usr/local/nginx/logs/nginx.pid
+
+======================================
+
+
+
+

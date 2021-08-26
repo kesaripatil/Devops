@@ -1,0 +1,22 @@
+Acronyms
+
+1. AMI - Amazon Machine Image
+
+
+ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
+
+ssh -i ~/.ssh/kesari_personal.pem ubuntu@ec2-54-214-115-114.us-west-2.compute.amazonaws.com
+
+Host my_first_ec2
+   HostName 54.214.115.114
+#   User ubuntu 
+   User firstnormaluser
+   ForwardAgent yes
+#   Port 22
+   IdentityFile ~/.ssh/kesari_personal
+   IdentitiesOnly yes
+#   ProxyCommand ssh ubuntu@ec2-54-214-115-114.us-west-2.compute.amazonaws.com
+#   ProxyCommand ssh firstnormaluser@ec2-54-214-115-114.us-west-2.compute.amazonaws.com
+
+ssh -i ~/.ssh/kesari_personal ubuntu@ec2-54-214-115-114.us-west-2.compute.amazonaws.com
+

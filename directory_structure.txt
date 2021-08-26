@@ -1,0 +1,23 @@
+1. /bin - binary - executable by any user of the system - contains basic cmd's required for system usage. common terminal cmd's like mkdir, ls, cat, mv, cp 
+
+2. /boot - system start up cmds
+
+3. /dev - device - contains device files, refer to hardware devices.
+
+4. /etc - system wide configurations which impacts complete system's behaviour.
+
+5. /lib - contains dynamic libraries and kernal modules.
+
+6. /media - acts as a mount point for external devices
+
+7. /opt can be used to store additional software for your system, which is not handled by the package manager.
+
+8. /proc is a virtual filesystem that provides a mechanism for kernel to send information to processes.
+
+9. /var is dedicated to variable data, such as logs, databases, websites, and temporary spool (e-mail etc.) files that persist from one boot to the next. A notable directory it contains is /var/log where system log files are kept.
+
+10. /usr contains the majority of user utilities and applications, and partly replicates the root directory structure, containing for instance, among others, /usr/bin/ and /usr/lib
+
+11. /tmp is a place for temporary files used by applications.
+
+12. /sbin - contains important administrative commands that should generally only be employed by the superuser.

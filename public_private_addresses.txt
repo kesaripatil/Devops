@@ -1,0 +1,22 @@
+public ip address
+ - Ip address of ISP router to which device is connected.
+ - Helps to connect to outside network
+ - These ips are unique/non repeatative 
+ - Range except private ip addresses
+
+private ip address
+ - Ip address assigned to device within the network.
+ - Non unique and repeatative 
+ - Ranges : 
+	1. 10.0.0.0 - 10.255.255.255
+	2. 172.16.0.0 - 172.31.255.255
+	3. 192.168.0.0 - 192.168.255.255
+
+Static ip
+ - Assigned and never changed frequently 
+
+Dynamic ip
+ - Dynamically gets assigned
+ - DHCP manages it.
+
+

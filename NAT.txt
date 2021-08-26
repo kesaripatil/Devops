@@ -1,0 +1,11 @@
+- NAT : N/W address translation
+- It is a method of mapping one ip address to another by modifing N/W address info section of IP header while a packet is in transit via routing device.
+
+Ex-> 
+	HOST		-PRI-N/W-	ROUTER		-PUB-N/W-	SERVER
+	10.0.10.1			15.5.3.2			120.10.10.0
+
+	[SA:DA]		->->		[SA:DA]		->->		[SA:DA]
+	[10.0.10.1:120.10.10.0]	  NT	[15.5.3.2:120.10.10.0]  ->
+			<-<-				<-<-	
+	[120.10.10.0:10.0.10.1]	  NT	[120.10.10.0:15.5.3.2]  <-
