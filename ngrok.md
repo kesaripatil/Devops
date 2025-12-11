@@ -3,4 +3,4 @@
 It lets to expose the local service to the outside world without actually deploying it over the public server.
 
 ## How it works
-1. 
+1. ngrok client agent runs on local machine. 
